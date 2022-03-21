@@ -1,0 +1,4 @@
+21/3/22
+
+Connected MySQL to the AWS EC2 instance. Everytime EC2 instance is stopped and restarted its hostname changes, so make sure using the correct hostname before SSH-ing into the EC2 instance.
+Practiced the CREATE and INSERT commands in the ECOMM_STORE database
