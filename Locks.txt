@@ -1,1 +1,12 @@
-Transaction Isolation Levels
+Transaction Isolation Levels:
+
+1. READ-COMMITTED
+        If there are multiple sessions accessing the database, all the other sessions will only see the committed changes in the database. (apart from the session making the changes). thats why its called READ-COMMITTED. it only reads the committed data!
+        
+2. READ-UNCOMMITTED 
+        when multiple sessions are accessing the database and can see un-committed changes from other session is calles Read-UnCommitted. Its also called dirty read.
+        
+3. REPEATABLE-READ
+        In this isolation level, the same data is seen within a session regardless of changes in other sessions. 'repeatable-read' i-e the data is repeated.
+        
+4. 
