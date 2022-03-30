@@ -1,0 +1,22 @@
+Lock Table: write (this locks the entire table)
+        If a table is locked to write level, no operations can be performed on that table until that lock is removed. Table locks can reduce the concurrency of operations that can happen in mysql, as no other operations can be performed on the table during its locked state.
+        
+
+Row Level Locks
+        This only locks the row a particular session is updating. all the other rows of the table are still accessible to other session for amendments.
+        Row level locks allow for high concurrency as only the rows are locked in a table instead of whole table.
+        
+
+DeadLocks
+        When two sessions happen to be waiting for a resource to be unlocked before releasing own locks is deadlocks.
+        MySQL is actually smart enough to detect Deadlocks and will kill one of the sessions and show error message to the user
+        
+        
+        
+command to check the data locks
+    
+    select * from performance_schema.data_locks;
+    show processlist;
+    select * from information_schema.processlist;
+        
+        
