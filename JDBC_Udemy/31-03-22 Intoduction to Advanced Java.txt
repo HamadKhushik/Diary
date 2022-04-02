@@ -1,0 +1,38 @@
+Difference between core Java and Advanced Java
+    - core Java can be used to develop stand alone applications, where as Advanced Java is required to develop web based applications
+    
+Technologies involved in Advanced Java include JDBC, Servlets and JSP.
+    - JSP(Java Server Pages) is meant for presentation logic(to display web pages). JSP is used for developing view components. 
+    
+    - Servlets is used for processing logic. It acts as an intermediary between user-interface and DB. It gets requests from user and retrieves/validates/process the data from DB and returns to the user.
+    
+    - JDBC is the technology used to communicate with the DB by Java/Servlets.
+    
+    - Versions of JDBC, Servlets and JSP
+        - JDBC = 4.2v
+        - Servlets = 3.1v
+        - JSP = 2.3v
+    
+Editions of Java
+    - Java Standard Edition: (J2SE) this edition is mostly used to develop stand alone applications = Core Java + JDBC
+    - Java Enterprise Edition: (J2EE) this edition is mostly used to develop web applicatoins = Servlets + JSP
+    - Java Micro Edition: (J2ME) this edition is mostly used to develop mobile applications and embedded applications. This edition is mostly meant for micro devices eg remote controller etc
+    
+    
+    
+    
+JDBC in simple way:
+    Components of JDBC:
+    - Driver (Acts as a translator between Java App and DB)
+        It is a set of guidelines specified by Java Vendour
+    - Connection
+    - Statement Object
+    - Result set
+    
+Steps to develop JDBC Application
+    1. Load and register Driver
+    2. Establish Connection between Java Application and DB
+    3. Creation of Statement Object
+    4. Send and execute SQL querry
+    5. Process result from result set
+    6. Close Connection

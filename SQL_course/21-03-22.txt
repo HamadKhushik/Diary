@@ -1,0 +1,64 @@
+21/3/22
+
+Connected MySQL to the AWS EC2 instance. Everytime EC2 instance is stopped and restarted its hostname changes, so make sure using the correct hostname before SSH-ing into the EC2 instance.
+Practiced the CREATE and INSERT commands in the ECOMM_STORE database
+Practiced the UPDATE command, updating multiple rows, using the WHERE clause in the update statement, updating severel rows at one time and using the CASE statement in the UPDATE command.
+Practiced JOINS and DELETE commands.
+learned about autocommit in MySQL and how to turn it off(set autocommit=0)
+
+======================================================================================
+
+SELECT statement structure
+    SELECT --name/s of the required columns
+    FROM -- table name OR joins if data need to be retrieved from multiple columns
+    WHERE -- define the condition to narrow down the results
+    ORDER BY -- how the data should be sorted - if required
+    
+it is also possible to use select statement with the functions as below
+    SELECT NOW(), DATABASE() -- 
+
+======================================================================================
+    
+UNION - it combines the results from two SELECT statements and returns all the unique           values.
+    UNION ALL - return all the values including duplicates
+    
+    the syntax for union is as below
+    
+    SELECT c1 
+    FROM T1 
+    UNION 
+    SELECT c1 
+    FROM T2
+    
+======================================================================================
+    
+JOIN 
+1.    inner join - it return only the values where the condition is met
+    
+    SELECT T1.c1, T2.c1
+    FROM T1 INNER JOIN T2 ON T1.c1 = T2.c2;
+    
+    the above statement only returns the values from both the tables where T1.c1 = T2.c1
+  
+2. left join - it returns the values where the condition is met AND all the values in      the left column  
+    SELECT T1.c1, T2.c1
+    FROM T1 LEFT JOIN T2 ON T1.c1 = T2.c1
+    
+    the above statement will return all the values where the condition is met AND all the values in Table T1
+    
+3. right join - it returns the values where the condition is met AND all the values in      the right column
+    
+    SELECT T1.c1, T2.c1
+    FROM T1 LEFT JOIN T2 ON T1.c1 = T2.c1
+    
+    the above statement will return all the values where the condition is met AND all the values in Table T2
+    
+4. full join - there is no full join in MySQL but it can be accomplished by using the       union statement
+
+    SELECT T1.c1, T2.c1
+    FROM T1 LEFT JOIN T2 ON T1.c1 = T2.c1
+    UNION 
+    SELECT T1.c1, T2.c1 
+    FROM T1 RIGHT JOIN T2 ON T1.c1 = T2.c1
+    
+    this will return all the values in both the tables
