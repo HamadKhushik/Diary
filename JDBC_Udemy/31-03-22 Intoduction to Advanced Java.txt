@@ -24,7 +24,6 @@ Editions of Java
 JDBC in simple way:
     Components of JDBC:
     - Driver (Acts as a translator between Java App and DB)
-        It is a set of guidelines specified by Java Vendour
     - Connection
     - Statement Object
     - Result set

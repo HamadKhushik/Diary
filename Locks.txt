@@ -9,4 +9,5 @@ Transaction Isolation Levels:
 3. REPEATABLE-READ
         In this isolation level, the same data is seen within a session regardless of changes in other sessions. 'repeatable-read' i-e the data is repeated.
         
-4. 
+4. SERIALIZABLE
+        This is the most strict leve of isolation. This would not even allow data to be read while it is being updated in other session. Even a select statement will lock the database from other sessions.

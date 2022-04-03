@@ -1,0 +1,8 @@
+JDBC  is a technology to connect Java Application to a database.
+    - For this type of connection certain guidelines are defined by Java Vendor which are called Driver
+    - These guidelines are implemented by the DB and are called Driver Software
+    
+JDBC Salient Features
+    - Standard API : Database independent
+    - Its platform independent : Driver software is developed using Java(as Java is platform independent), the driver software is platform independent as well
+

@@ -1,0 +1,42 @@
+Four types of Drivers:
+    - Type-1 Driver: Also known as bridge driver- acts as a bridge between Java             Application and ODBC. It is installed as part of Java JDK. Type-1 driver is Db     independent driver. It is slowest driver(low performance).
+        - Type-1 Driver is platform dependent because it uses ODBC internally
+        - It is not recommended to use Type-1 Driver since Java 1.8
+    
+    - Type-2 Driver: This driver converts Java specific calls to Vendor provided Db         specific Native libraries.
+        - Relatively faster than Type-1 Driver
+        - Type-2 Driver is platform dependent but can work with different platforms with platform specific libraries
+        - It is Db dependent driver and platform dependent driver, because of these limitations, this is not recommended driver either
+        - No guarantee that Db vendor provides Native libraries
+        - OCI Driver is an example of Type-2 Driver which is provided by Oracle
+        
+    - Type-3 Driver: Also called as Middleware Driver
+        - It is all Java Driver
+        - Type-3 Driver converts Java(JDBC) specific calls to Middleware specific calls     which then converts the Middleware Specific calls to Db specific calls
+        - Middleware Server internally uses Type-1, 2 or Type-4 Drivers
+        - It is the most commonly used driver in Enterprise Applications
+        - It is Db independent Driver
+        - It is platform independent Driver
+        - Performance is relatively low because of 2 conversions(JDBC => Middleware =>      Db)
+        - Middleware Server must be installed, which is not ideal
+        - This Driver is recommended for enterprise applications where multiple databases are in use
+        
+    - Type-4 Driver: It can directly communicate with the DB(unlike Type-1,2 or 3           Drivers)
+        - It converts JDBC calls to Db call directly
+        - Pure Java Driver coz it totally developed in Java and is platform             independent driver
+        - It is also known as thin driver because no extra component is required to     communicate to Db
+        - Only 1 conversion is required, therefore performance wise relatively better
+        - It is a commonly used Driver
+        - It is a Db dependent Driver
+        - It is recommended for small scale or stand alone applications where only one   database is in use, as Type-4 is Db dependent
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+        

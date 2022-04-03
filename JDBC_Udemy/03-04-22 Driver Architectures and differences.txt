@@ -1,0 +1,23 @@
+Thick and Thin Driver: 
+    - The driver which needs an extra component to communicate with the Db is called     thick Driver. Examples of thick drivers are Type-1, 2 and Type-3 Drivers
+    - Thin Driver is the one which does NOT need any extra component to communicate       with the DB. Example of thin Driver is Type-4 Driver
+    
+Tier2 vs Tier3 Architecture:
+    In simplest terms, Here Tier means number of machines involved(for all the components) for complete call from Java Appliation to DB. 
+    
+    - Type-1 Driver is Tier2 Driver as Java Appliation & Type-1 Driver and ODBC Driver   are all based on client machine where as DB is on different machine. Hence         Tier2 Driver
+    - Type-2 Driver is Tier2 Driver for the same reasons as above
+    - Type-3 Driver is Tier3 Driver as Java Application and Type-3 Driver is based on     client machine, Middleware software is installed on different machine and Db is     based on a third machine. Hence Tier3 Driver
+    - Type-4 Driver is as Tier2 Driver in the same way as Type-1 and Type-2 Drivers
+    
+
+Steps to Develop JDBC Application:
+    - 1. Load and register Driver Class:
+            - add .jar file for the driver in the class path
+            - Class.ForName('Driver class name');
+            - this step is not explicitly required after Java 1.6, its optional
+    - 2. Establish connection between Java Application and Db
+            - Connection con = DriverManager.getConnection(jdbc url, username, pwd);
+            - Breakdown of JDBC url = main-protcol: sub-protocol: sub-name
+                                    =jdbc(always): driver_protocol: connection_details
+            for Type-1 driver JDBC url = "jdbc:odbc:demodsn"
