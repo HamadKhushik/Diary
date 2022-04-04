@@ -16,8 +16,56 @@ Steps to Develop JDBC Application:
             - add .jar file for the driver in the class path
             - Class.ForName('Driver class name');
             - this step is not explicitly required after Java 1.6, its optional
-    - 2. Establish connection between Java Application and Db
+    - 2. Establish connection between Java Application and Db:
             - Connection con = DriverManager.getConnection(jdbc url, username, pwd);
             - Breakdown of JDBC url = main-protcol: sub-protocol: sub-name
                                     =jdbc(always): driver_protocol: connection_details
-            for Type-1 driver JDBC url = "jdbc:odbc:demodsn"
+            for Type-1 driver JDBC url = ("jdbc:odbc:demodsn", scott, tiger); where 'scott' is username for Oracle Db and 'tiger' is pwd for Oracle Db
+                - DSN stands for data source name, it provides the Db information to        ODBC driver in Type-1 Drivers.
+                    - DSN driver is not required in any other types of drivers
+                    - There are 3 Types of Drivers
+                        1. user DSN
+                        2. System DSN
+                        3. File DSN
+                        
+    - 3. Creation of Statement Object: statement object is used to send our querry to       Db and get the results back from the Db
+    
+            - Statement st = con.createStatement();
+            
+            
+    - 4. Prepare, send and execute SQL querry: 
+            - There are two types of querries with reference to JDBC    
+                1. select querries (these return data i-e result set)
+                2. non-select querries i-e insert|delete|update (these return a number      i-e number of rows effected)
+        
+            - In JDBC, there are 3 methods available to execute querries
+                1. executeQuerry() = used to execute SELECT querries and it will            return a 'result set'
+                2. executeUpdate() = used to execute non-SELECT querries and it will        return a number
+                3. execute() = used for both SELECT and non-SELECT querries and it          returns a boolean. If execute() returns a 'true' means querry is      SELECT querry and 'false' means non-SELECT querry
+                
+            - We use the above querries on the statement Object
+            
+            
+    - 5. Process results from Result Set
+            - while (rs.next())
+            - After that use the getter methods on result-set
+                rs.getString({index-No or column-Name})
+            - Index of first column in JDBC always starts with '1'
+    
+    
+    
+    
+    
+    
+    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
