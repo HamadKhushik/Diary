@@ -51,6 +51,17 @@ Steps to Develop JDBC Application:
             - After that use the getter methods on result-set
                 rs.getString({index-No or column-Name})
             - Index of first column in JDBC always starts with '1'
+            
+            
+    -6. Close the connection
+            - Close the associated objects before closing the connection
+                1. close the result set
+                2. close the statement object
+                3. close the connection
+            - Statement Object is always associated with Connection Object. Multiple statement objects can be created with a single connection
+            - * Result set is associated with Statement Object. Only one Result Set can be created with ONE statement Object
+            - Just closing the connection object will close all the associated objects. Statement Objects and Result object dont need to be explicitly closed
+            - Another way to use Connection is by using try with resources block, it automatically closes the resources at the end of block
     
     
     
