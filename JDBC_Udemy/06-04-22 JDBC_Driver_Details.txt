@@ -9,3 +9,14 @@ Working with Type-2 Driver
     3. jdbc url= jdbc:oracle:oci8:@XE (until oracle 8v)
                  jdbc:oracle:oci:@XE (from oracle 9 onwards)
                  - where XE is SID(System ID) every Db has a unique SID which can be found by couple of ways (from SQL command prompt - select * from global_name)
+
+Working with Type-4 Driver(most commonly used driver)
+
+    1. Load the jar corresponding jar file for the required Db(same as 
+        Type-2 Driver)
+    
+    2. Driver Class Name(same as Type-2 Driver): 
+        oracle.jdbc.driver.OracleDriver       
+        oracle.jdbc.OracleDriver
+
+    3. jdbc url= jdbc:oracle:thin:@localhost:1521:xe
